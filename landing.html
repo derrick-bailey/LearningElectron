@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Budget App</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<div id="sidebar">
+  <button id="btn-dashboard">Dashboard</button>
+  <button id="btn-reports">Reports</button>
+</div>
+
+<div id="main-content">
+  <!-- This content will be replaced by the dashboard or reports content -->
+</div>
+
+<script>
+  function loadContent(page) {
+    fetch(page)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('main-content').innerHTML = data;
+      })
+      .catch(err => console.error(err));
+  }
+
+  // Load the dashboard content by default
+  window.addEventListener('DOMContentLoaded', (event) => {
+    loadContent('dashboard.html');
+  });
+
+  document.getElementById('btn-dashboard').addEventListener('click', function() {
+    loadContent('dashboard.html');
+  });
+  
+  document.getElementById('btn-reports').addEventListener('click', function() {
+    loadContent('reports.html');
+  });
+</script>
+
+</body>
+</html>
