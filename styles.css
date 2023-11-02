@@ -1,56 +1,71 @@
-/* Style the tab */
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #ad1414;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 16px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-    background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 6x 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-}
-
-/* styles.css */
-#sidebar {
-    float: left;
-    width: 200px;
-    height: 100vh;
-    background: #f1f1f1;
-    padding: 20px;
+/* Overall body style */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #dddddd; /* Default text color set to light silver */
+    overflow: hidden; /* Prevents scrollbars from appearing due to padding */
+    box-sizing: border-box; /* Ensures the padding doesn't increase the total width and height */
+    height: 100vh; /* Subtract the total vertical padding from the viewport height */
   }
   
+  /* Style for the sidebar */
+  #sidebar {
+    float: left;
+    width: 5%; /* Dynamic width: takes up 10% of the window width */
+    height: 100vh; /* Full height of the viewport */
+    background: #222222; /* Dark gray color */
+    box-sizing: border-box; /* Ensures padding is included in width */
+  }
+  
+  /* Style for the main content area */
   #main-content {
-    margin-left: 200px;
-    padding: 1px 16px;
+    margin-left: 5%; /* Same as sidebar width to prevent overlap */
+    padding: 10px; /* Spacing inside the main content */
+    height: 100vh; /* Adjusted height calculation */
+    overflow: auto; /* Enables scrolling if the content overflows */
+    box-sizing: border-box; /* Ensures padding is included in width and height */
+    background: #333333;
   }
   
+  /* Style for buttons within the sidebar */
   button {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 5px;
-  }  
+    padding: 10% 10px; /* Adds padding on top and bottom to maintain square shape, and left and right for visual spacing */
+    margin-bottom: 2px; /* Spacing between buttons */
+    border: none; /* Removes border */
+    outline: none; /* Removes outline */
+    background-color: #444444; /* Slightly lighter gray for buttons */
+    color: white; /* White text for the buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition on hover */
+    position: relative; /* Enables absolute positioning inside buttons */
+  }
+  
+  /* Text inside the button to center vertically */
+  button span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Ensure the text spans the full width */
+    text-align: center; /* Center the text horizontally */
+  }
+  
+  /* Style for hover effect on buttons */
+  button:hover {
+    background-color: #555555; /* Even lighter gray on hover */
+  }
+  
+  /* Style for the active button */
+  button.active {
+    background-color: #555555; /* Same as hover to indicate the active section */
+  }
+  
+  /* Additional global styles for tab content, if needed */
+  .tabcontent {
+    display: none; /* Hide tab content by default */
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  
