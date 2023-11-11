@@ -37,8 +37,14 @@ body {
     background-color: #444444; /* Slightly lighter gray for buttons */
     color: white; /* White text for the buttons */
     cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth background color transition on hover */
+    transition: transform 0.5s ease, background-color 0.5s ease; /* Smooth transition for transform and background-color */
     position: relative; /* Enables absolute positioning inside buttons */
+  }
+
+  /* Style for hover effect on buttons */
+  button:hover {
+    transform: translateX(10px); /* Slide to the right on hover */
+    background-color: #818589; /* Slightly lighter gray when hovered */
   }
   
   /* Text inside the button to center vertically */
@@ -50,12 +56,7 @@ body {
     width: 100%; /* Ensure the text spans the full width */
     text-align: center; /* Center the text horizontally */
   }
-  
-  /* Style for hover effect on buttons */
-  button:hover {
-    background-color: #555555; /* Even lighter gray on hover */
-  }
-  
+
   /* Style for the active button */
   button.active {
     background-color: #555555; /* Same as hover to indicate the active section */
