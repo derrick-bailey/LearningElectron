@@ -6,15 +6,27 @@
 </head>
 <body>
 
-<div id="sidebar">
-  <button id="btn-dashboard">Dashboard</button>
-  <button id="btn-reports">Reports</button>
+<!-- Loading animation container -->
+<div id="loading">
+  <div class="loader"></div>
 </div>
 
+<!-- Sidebar container -->
+<div id="sidebar">
+  <button id="dashboard">
+    <img src="images/dashboard.svg" alt="Dashboard" />
+  </button>
+  <button id="reports">
+    Reports
+  </button>
+</div>
+
+<!-- Main container -->
 <div id="main-content">
   <!-- This content will be replaced by the dashboard or reports content -->
 </div>
 
+<script src="square_sidebar_buttons.js"></script>
 <script>
   function loadContent(page) {
     fetch(page)
@@ -25,21 +37,20 @@
       .catch(err => console.error(err));
   }
 
-  // Load the dashboard content by default
-  window.addEventListener('DOMContentLoaded', (event) => {
+  document.addEventListener('DOMContentLoaded', (event) => {
+    // Load the dashboard content by default
     loadContent('dashboard.html');
-  });
 
-  document.getElementById('btn-dashboard').addEventListener('click', function() {
-    loadContent('dashboard.html');
-  });
-  
-  document.getElementById('btn-reports').addEventListener('click', function() {
-    loadContent('reports.html');
+    // Set up event listeners for buttons
+    document.getElementById('dashboard').addEventListener('click', function() {
+      loadContent('dashboard.html');
+    });
+
+    document.getElementById('reports').addEventListener('click', function() {
+      loadContent('reports.html');
+    });
   });
 </script>
-
-<script src="square_sidebar_buttons.js"></script>
-
+<script src="renderer.js"></script>
 </body>
 </html>

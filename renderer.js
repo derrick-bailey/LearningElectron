@@ -17,3 +17,17 @@ function opentab(evt, tabName) {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += "active";
 }
+
+// Function to hide the loading animation
+function hideLoadingAnimation() {
+    const loader = document.getElementById('loading');
+    if (loader) {
+      loader.style.display = 'none';
+    }
+  }
+  
+  // Wait for the DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    // Hide the loading animation after a fixed duration (e.g., 2 seconds)
+    setTimeout(hideLoadingAnimation, 5000);
+  });
